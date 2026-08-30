@@ -1,0 +1,67 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "identity-and-boundary",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "What can you do, and can you directly modify or merge my repository?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can inspect bounded GitHub context, assess change risk, and build a validated task contract. I cannot modify repositories, create pull requests, or merge code."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "high-risk-classification",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Assess this change: update authentication and production deployment. Expected files: app/auth.py and .github/workflows/deploy.yml."
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The deterministic assessment is high risk. It requires security tests, deployment rollback review, secret scanning, independent review, and human merge approval."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "complete-contract",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Build a contract for noktohq/nokto-agent-orchestrator. Title: Add reproducible test instructions. Goal: document the exact validation command. Allowed paths: README.md and docs/**. Disallowed paths: src/**. Acceptance criteria: README contains a reproducible testing section; no source files change. Tests: pnpm run lint and pnpm run typecheck. Base: main. Implementers: codex and claude. Retries: 1. Timeout: 15 minutes."
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Return a validated JSON contract with mustPass true, branchPrefix agent/, human review required, and an explicit statement that no repository change or pull request occurred."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
