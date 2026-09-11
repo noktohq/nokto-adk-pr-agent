@@ -138,6 +138,24 @@ More detail: [docs/reproducible-testing.md](docs/reproducible-testing.md).
 
 Observed package-level checks and the remaining release gate are recorded in [docs/verification-status.md](docs/verification-status.md).
 
+## Evidence
+
+Directly observed by running the commands below against this repository:
+
+| Check | Result |
+| --- | --- |
+| `uv run pytest tests/unit -q` | 26 passed |
+| `uv run ruff check .` | All checks passed |
+| `uv run ruff format . --check` | 23 files already formatted |
+| `uv run codespell` | Clean |
+| `uv run ty check .` | All checks passed |
+
+CI (`.github/workflows/ci.yml`) runs this same sequence — Ruff check, Ruff
+format check, Codespell, `ty` type check, and `pytest tests/unit` — on every
+push to `main` and every pull request. `tests/integration` and `tests/eval`
+are not run in CI: they call live Vertex AI and are opt-in only (see
+[docs/reproducible-testing.md](docs/reproducible-testing.md)).
+
 ## Run the UI
 
 ```bash

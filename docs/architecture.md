@@ -94,7 +94,7 @@ The diagram was created specifically for this project from the system architectu
 
 ## Preflight status
 
-- `BEKREFTET`: PNG signature, 1920 × 1080 pixel geometry, RGB/sRGB color, and non-interlaced encoding were inspected locally.
-- `BEKREFTET`: File size is below Devpost's 35 MB upload limit.
-- `BEKREFTET`: A full-resolution visual inspection found no clipping or overlapping labels.
-- `UTKAST`: The diagram has not yet been uploaded to Devpost.
+- `CONFIRMED`: PNG signature, 1920 × 1080 pixel geometry, RGB/sRGB color, and non-interlaced encoding were inspected locally.
+- `CONFIRMED`: File size is below Devpost's 35 MB upload limit.
+- `CONFIRMED`: A full-resolution visual inspection found no clipping or overlapping labels.
+- `DRAFT`: The diagram has not yet been uploaded to Devpost.
