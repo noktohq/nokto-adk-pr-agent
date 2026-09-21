@@ -1,0 +1,56 @@
+# STATE.yaml — levende status for dette repoet (NOKTO CONTROL TOWER).
+# Schema: nokto-ops/control/schema/state.schema.json. Oppdateres av `nokto stop` — ikke dupliser i README.
+schema_version: 1
+project: NOKTO ADK PR Agent — read-only oppgavekontrakt-kontrollplan (Gemini/ADK)
+repo: noktohq/nokto-adk-pr-agent
+state: maintenance
+phase: hackathon-innsending levert 2026-08-30
+now: null
+next:
+- Kjør release-sjekkene i docs/verification-status.md i konfigurert miljø (agents-cli install, pytest
+  unit, lint, live smoke, integration) før eventuell deploy
+waiting: []
+blockers: []
+decisions_needed: []
+done:
+- what: Evidence-seksjon, GitHub Sponsors, docs-fiks
+  at: '2026-09-11'
+  evidence: 'PR #1'
+- what: Google ADK hackathon-innsending
+  at: '2026-08-30'
+  evidence: commit 8ed9c05
+milestones:
+- id: innsending
+  title: Hackathon-innsending (ADK, Gemini, Cloud Run-konfig)
+  status: done
+  date: '2026-08-30'
+  evidence: README
+- id: ci
+  title: Ruff, codespell, ty, pytest unit (26 tester) i CI
+  status: done
+  date: '2026-09-11'
+  evidence: CI grønn
+- id: release-gate
+  title: Live Gemini smoke + integrasjonstester kjørt i konfigurert miljø
+  status: planned
+  date: null
+  evidence: docs/verification-status.md
+environment:
+  runtime: Python 3.11–3.13, uv, google-agents-cli, Vertex AI
+  deploy: Cloud Run via agents-cli deploy (krever eksplisitt godkjenning)
+  url: null
+  notes: null
+production_status: unknown
+production_note: 'docs/verification-status.md: ikke hevd hosted resultat før alle sjekker er kjørt. Deploy-status
+  ukjent.'
+branch: main
+last_verified_commit: beb43e9
+last_checkpoint: null
+last_session: null
+security_findings: []
+updated_at: '2026-09-21T05:37:22Z'
+sources:
+- README.md
+- AGENTS.md
+- docs/verification-status.md
+- GitHub-snapshot 2026-09-21

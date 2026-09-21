@@ -71,3 +71,9 @@ Ask the user: Option A (simple single-project) or Option B (full CI/CD pipeline 
 - **Run Python with `uv`**: `uv run python script.py`. Run `agents-cli install` first.
 - **Stop on repeated errors**: If the same error appears 3+ times, fix the root cause instead of retrying.
 - **Terraform conflicts** (Error 409): Use `terraform import` instead of retrying creation.
+
+## Nokto-kontrollplan
+
+Organisasjonsstandarden for agenter gjelder i tillegg til det som står over:
+[nokto-ops/system/agent-standard.md](https://github.com/noktohq/nokto-ops/blob/main/system/agent-standard.md).
+Levende status for repoet ligger i `STATE.yaml` (les før arbeid, oppdater checkpoint etter arbeid).
